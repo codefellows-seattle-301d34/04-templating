@@ -2,10 +2,10 @@
 
 let articleView = {};
 
-// TODO: Where possible, refactor methods into arrow functions, including the document.ready() method at the bottom.
+// DONE: Where possible, refactor methods into arrow functions, including the document.ready() method at the bottom.
 
 // COMMENT: How do arrow functions affect the context of "this"? How did you determine if a function could be refactored?
-// PUT YOUR RESPONSE HERE
+// In the context of an arrow function, the use of the keyword 'this' is made more ambiguous, since arrow functions don't have their own scope. The scope will be inherited from the next tier in scope hierarchy. 
 
 articleView.populateFilters = () => {
   $( 'article' ).each( function () {
