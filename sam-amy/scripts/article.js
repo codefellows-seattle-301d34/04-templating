@@ -15,10 +15,9 @@ Article.prototype.toHtml = function() {
   // DONE: Use Handlebars to render your articles. Get your template from the DOM and "compile" your template with Handlebars.
   let template = $('#article-template').html();
   let templateRender = Handlebars.compile(template);
-  return templateRender(this);
 
   // Neighborhood.prototype.toHtml = function() {
-  //   // 1. Get the template from the HTML 
+  //   // 1. Get the template from the HTML
   //   let template = $('#neighborhood-template').html();
   //   // 2. Use Handlebars to compile the HTML, returns a function
   //   let templateRender = Handlebars.compile(template);
@@ -48,14 +47,15 @@ Article.prototype.toHtml = function() {
 
   // DONE: Use the method that Handlebars gave you to return your filled-in html template for THIS article.
 
-  rawdata.forEach(articleObject => articles.push(new Article(articleObject)))
+  rawData.forEach(articleObject => articles.push(new Article(articleObject)))
 
   // neighborhoodDataSet.forEach(neighborhoodObject => neighborhoods.push(new Neighborhood(neighborhoodObject)))
 
+  return templateRender(this);
 };
 
 // COMMENTED: Why are there parentheses around "(a,b)" in the .sort() method, but not around the "articleObject" or "article" arguments in the .forEach() methods?
-// Sort performs an action using two parameters, where the forEach method only has one parameter that it uses - hence the for<EACH>, implying each <ONE> at a time.  
+// Sort performs an action using two parameters, where the forEach method only has one parameter that it uses - hence the for<EACH>, implying each <ONE> at a time.
 rawData.sort((a,b) => {
   return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
 });
