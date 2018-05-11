@@ -29,7 +29,7 @@ This application is a blog, which practices mobile-first CSS styling to provide 
 
 05-11-2018 11:15am - Refactored articleView.js to utilize arrow functions, not every function needed arrow function.
 
-05-11-2018 11:55am - DONE
+05-11-2018 1:20pm - DONE; We finished understanding the arrow functions and applied it to the TODO
 
 
 ## Credits and Collaborations
