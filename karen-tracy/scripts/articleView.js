@@ -11,7 +11,6 @@ articleView.populateFilters = () => {
 
   let optionTemplateScript = $('#option-template').html();
   let optionTemplate = Handlebars.compile(optionTemplateScript);
-  let obj = {value: ''};
   let val;
 
   $('article').each(function() {
@@ -20,15 +19,13 @@ articleView.populateFilters = () => {
       val = $(this).data('author');
 
       if ($(`#author-filter option[value="${val}"]`).length === 0) {
-        obj.value = val;
-        $(optionTemplate(obj)).appendTo('#author-filter');
+        $(optionTemplate({value:val})).appendTo('#author-filter');
       }
 
       val = $(this).data('category');
 
       if ($(`#category-filter option[value="${val}"]`).length === 0) {
-        obj.value = val;
-        $(optionTemplate(obj)).appendTo('#category-filter');
+        $(optionTemplate({value:val})).appendTo('#category-filter');
       }
     }
   });
