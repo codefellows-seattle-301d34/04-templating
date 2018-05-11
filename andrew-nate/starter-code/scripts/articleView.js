@@ -8,15 +8,13 @@ let articleView = {};
 // Arrow functions apply the 'this' context to the next-larger function. Arrow functions allow us to have more control over scope.
 
 articleView.populateFilters = function() {
-  $('article').each(() => {
+  $('article').each(function() {
     if (!$(this).hasClass('template')) {
       let val = $(this).find('address a').text();
       let optionTag = `<option value="${val}">${val}</option>`;
-
       if ($(`#author-filter option[value="${val}"]`).length === 0) {
         $('#author-filter').append(optionTag);
       }
-
       val = $(this).attr('data-category');
       optionTag = `<option value="${val}">${val}</option>`;
       if ($(`#category-filter option[value="${val}"]`).length === 0) {
@@ -46,7 +44,7 @@ articleView.handleCategoryFilter = () => {
       $(`article[data-category="${$(this).val()}"]`).fadeIn();
     } else {
       $('article').fadeIn();
-      $('article.template').hide();
+      $('article-template').hide();
     }
     $('#author-filter').val('');
   });
@@ -64,7 +62,7 @@ articleView.handleMainNav = () => {
 
 articleView.setTeasers = () => {
   $('.article-body *:nth-of-type(n+2)').hide();
-  $('article').on('click', 'a.read-on', function(e) {
+  $('article').on('click', '.read-on', function(e) {
     e.preventDefault();
     if ($(this).text() === 'Read on →') {
       $(this).parent().find('*').fadeIn();
