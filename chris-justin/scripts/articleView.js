@@ -9,7 +9,7 @@ let articleView = {};
 // PUT YOUR RESPONSE HERE
 
 articleView.populateFilters = function() {
-  
+  console.log('populate-filters');
   $('article').each(function() {
     if (!$(this).hasClass('template')) {
       let val = $(this).find('address a').text();
@@ -84,8 +84,8 @@ articleView.setTeasers = function() {
 
 $(document).ready(function() {
   articleView.populateFilters();
-  articleView.handleCategoryFilter();
   articleView.handleAuthorFilter();
+  articleView.handleCategoryFilter();
   articleView.handleMainNav();
   articleView.setTeasers();
 });

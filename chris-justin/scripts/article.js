@@ -12,7 +12,7 @@ function Article (rawDataObj) {
 }
 
 Article.prototype.toHtml = function() {
-  // IN PROGRESS: Use Handlebars to render your articles. Get your template from the DOM and "compile" your template with Handlebars.
+  // DONE: Use Handlebars to render your articles. Get your template from the DOM and "compile" your template with Handlebars.
   let useTemplateScript = $('#blog-template').html();
   // console.log(useTemplateScript);
   let useTemplate = Handlebars.compile(useTemplateScript);
