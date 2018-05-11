@@ -27,6 +27,11 @@ This application is a blog, which practices mobile-first CSS styling to provide 
 
 05-11-2018 10:28am - Answered question at end of article.js
 
+05-11-2018 11:15am - Refactored articleView.js to utilize arrow functions, not every function needed arrow function.
+
+05-11-2018 11:55am - DONE
+
+
 ## Credits and Collaborations
 
 * Oscar Otero - [JQuery Quick API Reference](https://oscarotero.com/jquery/)
