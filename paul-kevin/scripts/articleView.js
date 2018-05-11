@@ -5,9 +5,11 @@ let articleView = {};
 // TODO: Where possible, refactor methods into arrow functions, including the document.ready() method at the bottom.
 
 // COMMENT: How do arrow functions affect the context of "this"? How did you determine if a function could be refactored?
-// So by applying the 'bubble' idea, the arrow functions allow 'this' to be used within the function as well as the outer function but we don't want to apply to every function because the head function could allow 'this' to be accessed from the DOM.
+// So by applying the 'bubbling' analogy, arrow functions will cause 'this' to reference the target to a containing function or the DOM if all containing functions are arrows as well.
 
-articleView.populateFilters = function () {
+//the arrow functions allow 'this' to be used within the function as well as the outer function but we don't want to apply to every function because the head function could allow 'this' to be accessed from the DOM.
+
+articleView.populateFilters = () => {
   $('article').each( function() {
     let val = $(this).find('address a').text();
     let optionTag = `<option value="${val}">${val}</option>`;
@@ -24,7 +26,7 @@ articleView.populateFilters = function () {
   });
 };
 
-articleView.handleAuthorFilter = function () {
+articleView.handleAuthorFilter = () => {
   $('#author-filter').on('change',function () {
     if ($(this).val()) {
       $('article').hide();
@@ -37,7 +39,7 @@ articleView.handleAuthorFilter = function () {
   });
 };
 
-articleView.handleCategoryFilter = function () {
+articleView.handleCategoryFilter = () => {
   $('#category-filter').on('change', function() {
     if ($(this).val()) {
       $('article').hide();
@@ -50,7 +52,7 @@ articleView.handleCategoryFilter = function () {
   });
 };
 
-articleView.handleMainNav = function () {
+articleView.handleMainNav = () => {
   $('nav').on('click', '.tab', function(e) {
     e.preventDefault();
     $('.tab-content').hide();
@@ -60,7 +62,7 @@ articleView.handleMainNav = function () {
   $('nav .tab:first').click();
 };
 
-articleView.setTeasers = function () {
+articleView.setTeasers = () => {
   $('.article-body *:nth-of-type(n+2)').hide();
   $('article').on('click', 'a.read-on', function(e) {
     e.preventDefault();
