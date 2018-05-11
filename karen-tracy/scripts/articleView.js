@@ -8,19 +8,27 @@ let articleView = {};
 // It changes the scope  to one parent above, so changes the context of this to the parent scope. If there's a contextual this then the arrow function will change the scope and will not work.
 
 articleView.populateFilters = () => {
+
+  let optionTemplateScript = $('#option-template').html();
+  let optionTemplate = Handlebars.compile(optionTemplateScript);
+  let obj = {value: ''};
+  let val;
+
   $('article').each(function() {
     if (!$(this).hasClass('template')) {
-      let val = $(this).find('address a').text();
-      let optionTag = `<option value="${val}">${val}</option>`;
+
+      val = $(this).data('author');
 
       if ($(`#author-filter option[value="${val}"]`).length === 0) {
-        $('#author-filter').append(optionTag);
+        obj.value = val;
+        $(optionTemplate(obj)).appendTo('#author-filter');
       }
 
-      val = $(this).attr('data-category');
-      optionTag = `<option value="${val}">${val}</option>`;
+      val = $(this).data('category');
+
       if ($(`#category-filter option[value="${val}"]`).length === 0) {
-        $('#category-filter').append(optionTag);
+        obj.value = val;
+        $(optionTemplate(obj)).appendTo('#category-filter');
       }
     }
   });

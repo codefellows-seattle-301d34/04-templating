@@ -14,6 +14,8 @@ open index.html (or load index.html into your browser of choice)
 ## Architecture
 The application utilizes JQuery and Handlebars libraries.  Code is orgainzed into three js files: blogArticles.js (a data file containing blog objects), articles.js (creates array of Article objects and the toHtml method), and articleView.js (renders the page and handles filtering/presentation).
 
+Handlebars is used to create and populate <article> elements for blog articles and <option> elements for filters.
+
 ## Change Log
 
 
