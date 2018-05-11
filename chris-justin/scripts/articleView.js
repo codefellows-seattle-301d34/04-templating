@@ -1,4 +1,5 @@
 'use strict';
+console.log('hello');
 
 let articleView = {};
 
@@ -8,9 +9,11 @@ let articleView = {};
 // PUT YOUR RESPONSE HERE
 
 articleView.populateFilters = function() {
+  
   $('article').each(function() {
     if (!$(this).hasClass('template')) {
       let val = $(this).find('address a').text();
+      console.log(val);
       let optionTag = `<option value="${val}">${val}</option>`;
 
       if ($(`#author-filter option[value="${val}"]`).length === 0) {
@@ -85,4 +88,4 @@ $(document).ready(function() {
   articleView.handleAuthorFilter();
   articleView.handleMainNav();
   articleView.setTeasers();
-})
+});

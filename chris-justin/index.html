@@ -4,15 +4,36 @@
     <meta charset="UTF-8">
     <title>Lab 4</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="vendor/styles/normalize.css">
+    <!-- <link rel="stylesheet" href="vendor/styles/normalize.css"> -->
     <link rel="stylesheet" href="vendor/styles/icons.css">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/modules.css">
     <link rel="icon" type="image/x-icon" href="https://avatars2.githubusercontent.com/u/18607604?v=3&s=200">
+<script id="blog-template" type="text/x-handlebars-template">
+  <article class="template" data-category="{{category}}" data-author="{{author}}"> 
+    <header>
+      <h1>{{title}}</h1>
+      <div>
+        By <address><a href="{{authorUrl}}">{{author}}</a></address>
+        <time pubdate datetime="{{publishedOn}}">{{publishStatus}}</time>
+      </div>
+    </header>
+    <section class="article-body">{{{body}}}</section>
+    <a href="#" class="read-on">Read on &rarr;</a>
+  </article>
 
+<!-- <div id="blog-article" data-category="{{category}}" data-author="{{author}}">
+  <header>
+    {{title}}
+  </header> -->
+  <!-- <section>
+    By {{author}} published on {{publishedOn}} {{{body}}}
+  </section>
+</div> -->
+</script>
     <!--
-      TODO: Add a script tag to hold the Handlebars template.
+      DONE: Add a script tag to hold the Handlebars template.
         - Be sure to give it a meaningful id attribute.
         - Move your old template structure to here. Remember that this template needs to have the same structure as the old one!
         - Insert placeholder keys.
@@ -54,7 +75,7 @@
           </ul>
         </div>
       </section>
-      <section id="about" class="tab-content">
+      <!-- <section id="about" class="tab-content">
         <header>
           Welcome to my Blog
         </header>
@@ -65,7 +86,7 @@
             <li>Sharing what I've learned</li>
             <li>Hanging with my family</li>
           </ul>
-        </section>
+        </section> -->
       </section>
     </main>
     <footer>
@@ -73,8 +94,8 @@
     </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <!-- TODO: Include Handlebars.JS from a CDN -->
-
+    <!-- DONE: Include Handlebars.JS from a CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
     <script src="scripts/blogArticles.js"></script>
     <script src="scripts/article.js"></script>
     <script src="scripts/articleView.js"></script>
