@@ -23,8 +23,7 @@ Written with Visual Studio Code.
 
 ## Change Log
 
-05-09-2018 10:10am - Implemented menu interaction css.
-05-09-2018 11:23am - Articles now render to the front page. 
+05-14-18 8:38PM - The blog now uses handlebars for templating. 
 
 ## Credits and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
